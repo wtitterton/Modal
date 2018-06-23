@@ -1,3 +1,6 @@
+
+/* Basic styling */
+
 .no-scroll
 {
   overflow: hidden;
@@ -11,13 +14,8 @@
   bottom:0;
   left:0;
   background: rgba(0,0,0,.4);
-  display: none;
+  visibility: hidden;
   overflow: auto;
-}
-
-.overlay.show
-{
-  display: block;
 }
 
 .modal-container
@@ -28,5 +26,93 @@
   top: 50%;
   transform: translate(-50%, -50%); /* Yep! */
   width: 90%;
-  min-height:300px;
+  max-width: 500px;
+}
+
+.modal-container .fas.fa-times
+{
+  float: right;
+  font-size: 18px;
+  padding: 10px;
+}
+
+
+/* animation classes */
+/* slide down */
+.overlay.slide-down
+{
+
+  visibility: hidden;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
+    transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+
+}
+
+.overlay.slide-down.open
+{
+  visibility: visible;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* scale */
+
+.overlay.scale
+{
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+  transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+}
+
+.overlay.scale.open
+{
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+/* simple */
+
+.overlay.simple
+{
+  visibility: hidden;
+  -webkit-transform: translateY(60%) scale(0);
+  transform: translateY(60%) scale(0);
+  -webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
+  transition: transform 0.4s, visibility 0s 0.4s;
+}
+
+.overlay.simple.open
+{
+  visibility: visible;
+  -webkit-transform: translateY(0%) scale(1);
+  transform: translateY(0%) scale(1);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+}
+
+/* fade-in */
+
+.overlay.fade-in
+{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0s 0.5s;
+}
+
+.overlay.fade-in.open
+{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s, visibility 0s;
 }

@@ -1,0 +1,32 @@
+.no-scroll
+{
+  overflow: hidden;
+}
+
+.overlay
+{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: rgba(0,0,0,.4);
+  display: none;
+  overflow: auto;
+}
+
+.overlay.show
+{
+  display: block;
+}
+
+.modal-container
+{
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Yep! */
+  width: 90%;
+  min-height:300px;
+}
